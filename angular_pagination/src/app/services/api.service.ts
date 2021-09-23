@@ -15,6 +15,7 @@ export class ApiService {
   public last: string = "";
   private SERVER_URL = "http://localhost:3000/products";
 
+
   constructor(private httpClient: HttpClient) { }
 
   parseLinkHeader(header) {
@@ -54,7 +55,6 @@ export class ApiService {
   public sendGetRequest(){
     
     return this.httpClient.get(this.SERVER_URL, {  params: new HttpParams({fromString: "_page=1&_limit=20"}), observe: "response"}).pipe(retry(3), catchError(this.handleError), tap(res => {
-      console.log(res.headers.get('Link'));
       this.parseLinkHeader(res.headers.get('Link'));
     }));
 
@@ -66,5 +66,9 @@ export class ApiService {
       console.log(res.headers.get('Link'));  
       this.parseLinkHeader(res.headers.get('Link'));
     }));  
+  }
+
+  public getProduct(id){
+    return this.httpClient.get(`${this.SERVER_URL}/${id}`)
   }
 }

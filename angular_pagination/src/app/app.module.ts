@@ -14,17 +14,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewItemComponent } from './components/view-item/view-item.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
   {path:'home', component: HomeComponent},
+  {path:'view-item/:id', component: ViewItemComponent},
   {path:'about', component: AboutComponent},
 ]
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ViewItemComponent
   ],
   imports: [
     BrowserModule,
