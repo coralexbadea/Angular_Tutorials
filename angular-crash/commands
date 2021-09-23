@@ -1,0 +1,6 @@
+npm i -g @angular/cli
+ng new angular-crash
+ng serve
+ng generate component components/header
+#"server": "json-server --watch db.json --port 5000"
+ npm run server
