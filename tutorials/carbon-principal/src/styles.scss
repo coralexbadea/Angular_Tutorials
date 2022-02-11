@@ -1,0 +1,11 @@
+@import "~carbon-components/scss/globals/scss/styles";
+
+@import "./assets/scss/carbon-override.scss";
+
+html, body{
+    display: inline-block!important;
+    min-height: 100%!important;
+    min-width: 100%!important;
+    height: 100%!important;
+    width: 100%!important;
+}

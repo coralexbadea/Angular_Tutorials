@@ -1,0 +1,32 @@
+<ng-template #default>
+	<div class="logo"></div>
+</ng-template>
+
+<ibm-header [brand]="default" name="Title" class="bx--header">
+	<ibm-hamburger [active]="hamburgerActive"
+	(selected)="toggleHamburger()"
+	></ibm-hamburger>
+	
+	<ibm-header-navigation>
+		<ibm-header-item routerLink="catalog">Dashboard</ibm-header-item>
+		<ibm-header-item routerLink="docs">Mailboxes</ibm-header-item>
+		<ibm-header-item routerLink="add-customer">Customer</ibm-header-item>
+	</ibm-header-navigation>
+	<ibm-header-global>
+		<ibm-header-menu [title]="title">
+			<ibm-header-item (click)="changeTitle('Translate')"routerLink="link1">Yonder</ibm-header-item>
+			<ibm-header-item>Link 2</ibm-header-item>
+			<ibm-header-item>Link 3</ibm-header-item>
+		</ibm-header-menu>
+		<ibm-header-action >
+			<svg ibmIconHelp size="20"></svg>
+		</ibm-header-action>
+		<ibm-header-action title="action">
+			<svg ibmIconUserAvatar size="20"></svg>
+		</ibm-header-action>
+		<ibm-header-action title="action">
+			<svg ibmIconAppSwitcher size="20"></svg>
+		</ibm-header-action>
+	</ibm-header-global>
+</ibm-header>
+

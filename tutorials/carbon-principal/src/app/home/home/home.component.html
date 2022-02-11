@@ -1,0 +1,5 @@
+<app-header (toggledHamburger)="toggleSidenav($event)"></app-header>
+<app-sidenav [expanded]="expandedSidenav" [hidden]="!expandedSidenav"></app-sidenav>
+<main class='bx--content' [ngClass]="{'shift_content': expandedSidenav}" >
+    <router-outlet></router-outlet>
+</main>

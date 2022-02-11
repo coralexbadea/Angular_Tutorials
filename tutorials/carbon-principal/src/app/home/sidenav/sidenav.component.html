@@ -1,0 +1,6 @@
+<ibm-sidenav [expanded]="expanded" [hidden]="hidden" [allowExpansion]="true">
+    <!-- [navigationItems]="headerItems"> -->
+    <ibm-sidenav-menu title="ZorgMail Hosted Mail">
+        <ibm-sidenav-item *ngFor="let item of items" [routerLink]="item.link">{{item.title}}</ibm-sidenav-item>
+    </ibm-sidenav-menu>
+</ibm-sidenav>

@@ -1,0 +1,46 @@
+
+$faded-color:rgb(190,190,190);
+.top-container{
+    padding: 20px;
+}
+.bold{
+    font-weight: 500;
+}
+.faded{
+    color: $faded-color;
+}
+
+.form-container{
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px;
+    width: 550px;
+}
+
+ibm-label{
+    margin-top: 20px;
+    font-weight: bold!important;
+}
+
+.form-row{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bx--form-item{
+    width: 100%;
+}
+
+
+.bx--radio-button-group{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column!important;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+
+.bx--radio-button-wrapper .bx--radio-button__label {
+    margin: 5px auto!important;
+}

@@ -1,0 +1,12 @@
+@import "../../../assets/scss/scss-utils.scss";
+
+.bx--content{
+    background-color: rgb(250, 250, 250);
+    height: 100%;
+    transition: margin-left 0.3s;
+}
+
+.shift_content{  
+    transition: margin-left 0.1s;
+    margin-left: 250px!important;
+}

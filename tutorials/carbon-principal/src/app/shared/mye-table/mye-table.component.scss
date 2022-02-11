@@ -1,0 +1,30 @@
+::ng-deep {
+  .bx--toolbar-search-container-active .bx--search-input:not(:placeholder-shown),
+  .bx--toolbar-search-container-persistent .bx--search-input:not(:placeholder-shown) {
+    background-color: #ffffff;
+  }
+
+  .bx--search-magnifier {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 2;
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    fill: #525252;
+  }
+
+  .bx--search--sm .bx--search-input,
+  .bx--search--sm.bx--search--expandable.bx--search--expanded .bx--search-input {
+    height: 3rem;
+    padding: 0 3rem;
+  }
+
+  .bx--search--sm .bx--search-close,
+  .bx--search--sm~.bx--search-button {
+    width: 3rem;
+    height: 3rem;
+  }
+}

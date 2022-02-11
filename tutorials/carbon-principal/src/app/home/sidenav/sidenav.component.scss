@@ -1,0 +1,17 @@
+
+@import "../../../assets/scss/scss-utils.scss";
+
+a.bx--side-nav__link{
+    font-weight: 900!important;
+    background-color:white;
+    border: none !important;
+    border-left: 4px solid rgb(20,112,165)  !important;
+}
+a.bx--side-nav__link:focus {
+    background-color:rgb(220,220,220)!important;
+   // border: rgb(20,112,165) solid 2px;
+    
+    border: rgb(53, 176, 234) solid 2px !important;
+    border-left: 4px solid rgb(20,112,165)  !important;
+    outline: none;
+}

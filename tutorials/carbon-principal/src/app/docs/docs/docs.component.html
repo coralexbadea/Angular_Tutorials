@@ -1,0 +1,49 @@
+<ibm-breadcrumb>
+    <ibm-breadcrumb-item href="#1">
+        Dashboard
+    </ibm-breadcrumb-item>
+    <ibm-breadcrumb-item href="#2">
+        Product settings
+    </ibm-breadcrumb-item>
+    <ibm-breadcrumb-item href="#3">
+        ZorgMail Hosted Mail
+    </ibm-breadcrumb-item>
+</ibm-breadcrumb>
+
+<h2 class="mail-title">Hosted Mail mailboxes</h2>
+<p class="mail-subtitle-faded">Overview of active Hosted Mail mailboxes within the organization.</p>
+
+<!-- <ibm-table-container>
+    <ibm-table [model]="model" [showSelectionColumn]="showSelectionColumn"  [striped]="striped">  
+        <tbody><tr><td class="no-data" colspan="3"><div>No data.</div></td></tr></tbody>
+    </ibm-table>
+</ibm-table-container> -->
+
+<div ibmCol>
+    <mye-table
+        #table
+        id="mailbox-view-table"  
+        [toolbar]="false"
+        [searchable]="false"
+        [sortable]="true"
+        [tableColumnsConfigData]="columnData"
+        [tableData]="mailboxes"
+        [itemsPerPageOptions]="itemsPerPageOptions"
+        [pagination]="pagination"
+        [useClientSidePagination]="true"
+        [showSelectionIcon]="false"
+        (itemSelected)="navigateToMailbox($event)"
+        (pageChanged)="selectPage($event)"
+        (onPageItemsListChanged)="loadUsers($event)"
+        (onEmptyStateAction)="tryAgain()"
+        (onFiltersChanged)="onFiltersChanged($event)"
+    >
+    </mye-table>
+</div>
+
+<a routerLink="/docs/table">Another Table link</a>
+<button (click)="navigateTo('table')">Another Table button</button>
+
+
+
+

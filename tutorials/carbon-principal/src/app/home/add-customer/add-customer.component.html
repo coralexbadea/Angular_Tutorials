@@ -1,0 +1,152 @@
+
+<div class="top-container">
+    <ibm-breadcrumb>
+        <ibm-breadcrumb-item href='#1'>
+            Customer
+        </ibm-breadcrumb-item>
+    </ibm-breadcrumb>
+    <h3 class="bold">Add Customer</h3>
+</div>
+<div class="form-container">
+    <h4 class="bold">Single customer</h4>
+    <h5 class="bold">Fillin the form to add a single customer.</h5>
+    <br>
+    <br>
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="customerForm">
+
+        <div class="form-group">
+            <!-- <label class="col-md-2 col-form-label"
+                   for="emailId">Email</label> -->
+            <div class="class">
+                <ibm-label>
+                Is this a new or existing organisation?
+                    <ibm-radio-group
+                        aria-label="radiogroup" 
+                        formControlName="organisation"        
+                    >
+                        <ibm-radio
+                            value="new"
+                            [checked]="true"
+                        >New Organization</ibm-radio>
+                        <ibm-radio
+                            value="old"
+                            [checked]="false"
+                        >Existing Organization</ibm-radio>
+
+                    </ibm-radio-group>
+                                    
+                </ibm-label>
+
+                
+                <ibm-label
+                    [helperText]="''"
+                    [invalidText]="messages['name']"
+                    [invalid]="messages['name']"
+                >
+                Name
+                <input ibmText class="form-control-email"
+                        [autocomplete]="false"
+                        [invalid]="messages['name']"
+                        placeholder="Enter a name"
+                        formControlName="name"
+                        modal-primary-focus />
+                </ibm-label>
+
+                <ibm-label
+                    [helperText]="''"
+                    [invalidText]="messages['type']"
+                    [invalid]="messages['type']"
+                >
+                Type
+                </ibm-label>
+                <ibm-select formControlName="type">
+                    <option value="default" hidden selected>Select organisation type</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </ibm-select>
+            
+
+                <ibm-label
+                    [helperText]="''"
+                    [invalidText]="messages['agbCode']"
+                    [invalid]="messages['agbCode']"
+                >
+                AGB code (optional)
+                <input ibmText class="form-control-email"
+                        [autocomplete]="false"
+                        [invalid]="messages['agbCode']"
+                        placeholder="123456789"
+                        formControlName="agbCode"
+                        modal-primary-focus />
+                </ibm-label>
+
+                <ibm-label
+                    [helperText]="''"
+                    [invalidText]="messages['streetName']"
+                    [invalid]="messages['streetName']"
+                >
+                StreetName
+                <input ibmText class="form-control-email"
+                        [autocomplete]="false"
+                        [invalid]="messages['streetName']"
+                        placeholder="e.g. Rivium Quadrant"
+                        formControlName="streetName"
+                        modal-primary-focus />
+                </ibm-label>
+
+                <div class="form-row">
+                    <ibm-label
+                        [helperText]="''"
+                        [invalidText]="messages['houseNumber']"
+                        [invalid]="messages['houseNumber']"
+                    >
+                    House number
+                    <input ibmText class="form-control-email"
+                            [autocomplete]="false"
+                            [invalid]="messages['houseNumber']"
+                            placeholder="e.g. 115"
+                            formControlName="houseNumber"
+                            modal-primary-focus />
+                    </ibm-label>
+
+
+                    <ibm-label
+                        [helperText]="''"
+                        [invalidText]="messages['houseNumberAdditional']"
+                        [invalid]="messages['houseNumberAdditional']"
+                    >
+                    House numer additional (optional)
+                    <input ibmText class="form-control-email"
+                            [autocomplete]="false"
+                            [invalid]="messages['houseNumberAdditional']"
+                            placeholder="Unit #,Apt,Suite"
+                            formControlName="houseNumberAdditional"
+                            modal-primary-focus />
+                    </ibm-label>
+                </div>
+                <ibm-label
+                    [helperText]="''"
+                    [invalidText]="messages['postalCode']"
+                    [invalid]="messages['postalCode']"
+                >
+                Postal Code
+                <input ibmText class="form-control-email"
+                        [autocomplete]="false"
+                        [invalid]="messages['postalCode']"
+                        placeholder="Enter the postal code"
+                        formControlName="postalCode"
+                        modal-primary-focus />
+                </ibm-label>
+            </div>
+        </div>
+
+    </form>
+
+
+<br>Dirty: {{ customerForm.dirty }}
+<br>Touched: {{ customerForm.touched }}
+<br>Valid: {{ customerForm.valid }}
+<br>Email valid: {{ messages['email'] }}
+<br>Value: {{ customerForm.value | json }}
+</div>

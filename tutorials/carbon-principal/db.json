@@ -1,0 +1,29 @@
+{
+  "mailboxes":[
+      {
+          "clientNumber":500856123,
+          "displayName":"M. Cornea (Yonder)",
+          "emailAddress":"m.cornea@zorgmail.dev",
+          "users":1
+      },
+      {
+          "clientNumber":500956487,
+          "displayName":"N. Criste (Yonder)",
+          "emailAddress":"n.criste@zorgmail.dev",
+          "users":0
+      },
+      {
+          "clientNumber":500945087,
+          "displayName":"O. Adorian (Yonder)",
+          "emailAddress":"o.adorian@zorgmail.dev",
+          "users":1
+      },
+      {
+          "clientNumber":500487509,
+          "displayName":"R. Cosma (Yonder)",
+          "emailAddress":"r.cosma@zorgmail.dev",
+          "users":0
+      }
+
+  ]
+}

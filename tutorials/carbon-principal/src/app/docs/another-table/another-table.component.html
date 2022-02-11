@@ -1,0 +1,22 @@
+<ng-template #default let-data="data">
+    <div>{{data.displayName}}</div>
+</ng-template>
+
+<div ibmCol>
+    <mye-table
+        #table
+        id="mailbox-view-table"  
+        [toolbar]="false"
+        [searchable]="false"
+        [sortable]="true"
+        [tableColumnsConfigData]="columnData"
+        [tableData]="mailboxes"
+        [expandedDataConfig]="['displayName']"
+        [expandedTemplate]="default"
+        [itemsPerPageOptions]="itemsPerPageOptions"
+        [pagination]="pagination"
+        [useClientSidePagination]="true"
+        [showSelectionIcon]="false"
+    >
+    </mye-table>
+</div>

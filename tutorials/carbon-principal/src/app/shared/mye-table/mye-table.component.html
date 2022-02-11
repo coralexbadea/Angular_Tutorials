@@ -1,0 +1,53 @@
+<div>
+  <ibm-table-toolbar *ngIf="toolbar" #toolbarElement [model]="tableModel" [cancelText]="toolbarActionTexts?.cancelText" [batchText]="toolbarActionTexts?.batchText">
+    <ibm-table-toolbar-actions>
+      <ng-content select="[toolbarActions]"></ng-content>
+    </ibm-table-toolbar-actions>
+    <ibm-table-toolbar-content *ngIf="!toolbarElement?.selected">
+      <ibm-table-toolbar-search
+        *ngIf="searchable"
+        [value]="searchValue"
+        [expandable]="false"
+        [placeholder]="searchPlaceholder"
+        [skeleton]="isLoading"
+        (search)="search($event)"
+        (clear)="search()">
+      </ibm-table-toolbar-search>
+      <ng-content select="[headerActions]"></ng-content>
+    </ibm-table-toolbar-content>
+  </ibm-table-toolbar>
+  <ibm-table-container *ngIf="tableData.length > 0 || isLoading">
+    <ibm-table
+      [columnsResizable]="columnsResizable"
+      [model]="tableModel"
+      [showSelectionColumn]="showSelectionColumn"
+      [skeleton]="isLoading"
+      [sortable]="sortable"
+      [striped]="striped"
+      [stickyHeader]="stickyHeader"
+      (sort)="sort($event)"
+      (rowClick)="selectRow($event)"
+    >
+    </ibm-table>
+  </ibm-table-container>
+  <ibm-pagination
+    *ngIf="pagination && (tableData && tableData.length > 0 || isLoading)"
+    [translations]="paginationTranslation"
+    [model]="pagination"
+    (selectPage)="selectPage($event)"
+    [itemsPerPageOptions]="itemsPerPageOptions"
+    [skeleton]="isLoading">
+  </ibm-pagination>
+  <mye-empty-state *ngIf="tableData.length === 0 && !isLoading && emptyStateTranslation"
+    [title]="emptyStateTranslation.title"
+    [body]="emptyStateTranslation.body"
+    [action]="emptyStateTranslation.action"
+    [hideTopbar]="hideEmptyStateTopbar"
+    (actionEmitted)="emptyStateAction()"
+  >
+  </mye-empty-state>
+  <ng-template #customTableItemTemplate let-data="data">
+    <span id="{{elementId}}-row-selection-{{data}}"><svg ibmIconChevronRight size="16"></svg></span>
+  </ng-template>
+</div>
+
